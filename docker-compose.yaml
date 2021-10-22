@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-sysfoo:
-image: roronoasrinu/sysfoo:latest
-ports:
-- 8898:8080
+  sysfoo:
+    image: roronoasrinu/sysfoo:latest
+    ports:
+    - 8898:8080
