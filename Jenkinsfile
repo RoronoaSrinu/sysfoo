@@ -64,7 +64,6 @@ pipeline {
 
       }
     }
-
   }
   tools {
     maven 'Maven'
