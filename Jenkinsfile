@@ -37,19 +37,6 @@ pipeline {
         archiveArtifacts 'target/*.war'
       }
     }
-
-    stage('Deploy to Dev'){
-         when{
-           beforeAgent true
-          branch 'master'
-         }
-         agent any
-         steps{
-           echo 'Deploting to dev environment with Docker compose.'
-           sh 'docker-compose up -d'
-         }
-    }
-
     stage('Docker BnP') {
       agent any
       steps {
@@ -63,6 +50,17 @@ pipeline {
         }
 
       }
+    }
+    stage('Deploy to Dev'){
+         when{
+           beforeAgent true
+          branch 'master'
+         }
+         agent any
+         steps{
+           echo 'Deploting to dev environment with Docker compose.'
+           sh 'docker-compose up -d'
+         }
     }
   }
   tools {
